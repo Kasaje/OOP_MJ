@@ -471,7 +471,7 @@ class player_attack implements position{
             System.out.println(this.name + " Attack Boss " + this.ATK + " Damage " + "Boss HP : " + hp_boss);
             System.out.println( "Boss Attack " + this.name + " 150 damage " + this.name + " HP : " + this.HP + "\n");
 
-            hp_boss = hp_boss - (this.ATK+(this.ATK*(attack_percent/100)));
+            hp_boss = hp_boss - this.ATK;
             this.HP = this.HP - 150;
             if(this.HP <= 0){
                 System.out.println("---------- Game Over ----------");
@@ -489,8 +489,16 @@ class player_attack implements position{
     public void attack(int doubleattack){
         double hp_boss = 1000;
         int r = (int) (Math.random() * (5 - 1)) + 1;
-        while (hp_boss >= 0 || this.HP > 0) {
-            if(r == 3){
+        while (this.HP >= 0 || hp_boss >= 0 ) {
+            if (hp_boss <= 0){
+                System.out.println("---------- You Win ----------");
+                break;
+            }
+            else if(this.HP <= 0){
+                System.out.println("---------- Game Over ----------");
+                break;
+            }
+            else if(r == 3){
                 hp_boss = hp_boss - (this.ATK * 2);
                 this.HP = this.HP - 150;
                 System.out.println(this.name + " Attack Boss " + this.ATK*2 + " Damage " + "Boss HP : " + hp_boss);
@@ -505,14 +513,6 @@ class player_attack implements position{
                 
             }
             
-            if (hp_boss <= 0){
-                System.out.println("---------- You Win ----------");
-                break;
-            }
-            if(this.HP <= 0){
-                System.out.println("---------- Game Over ----------");
-                break;
-            }
         }
     }
 
