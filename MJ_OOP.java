@@ -545,6 +545,7 @@ class player_attack implements position{
         while (hp_boss >= 0 || this.HP > 0){
             if(r == 3){
                 hp_boss = hp_boss - (this.ATK * 2);
+                this.HP = this.HP - 150;
                 System.out.println(this.name + " Attack Boss " + this.ATK*2 + " Damage " + "Boss HP : " + hp_boss);
                 System.out.println( "Boss Attack " + this.name + " 150 damage " + this.name + " HP : " + this.HP + "\n");
             }
