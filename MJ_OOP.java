@@ -256,7 +256,7 @@ class Arrow_Fire extends Characters{
     Arrow_Fire(String name){
         super(name);
         this.HP = 850;
-        this.ATK = 210;
+        this.ATK = 220;
         this.DEF = 60;
     }
 
