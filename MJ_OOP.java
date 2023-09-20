@@ -487,28 +487,30 @@ class player_attack implements position{
 
     // overloading
     public void attack(int doubleattack){
-        double attack = doubleattack;
         double hp_boss = 1000;
         int r = (int) (Math.random() * (5 - 1)) + 1;
         while (hp_boss >= 0 || this.HP > 0) {
             if(r == 3){
+                hp_boss = hp_boss - (this.ATK * 2);
+                this.HP = this.HP - 150;
                 System.out.println(this.name + " Attack Boss " + this.ATK*2 + " Damage " + "Boss HP : " + hp_boss);
                 System.out.println( "Boss Attack " + this.name + " 150 damage " + this.name + " HP : " + this.HP + "\n");
-                hp_boss = hp_boss - (this.ATK+(this.ATK*(attack/100)));
+                
             }
             else{
+                hp_boss = hp_boss - this.ATK;
+                this.HP = this.HP - 150;
                 System.out.println(this.name + " Attack Boss " + this.ATK + " Damage " + "Boss HP : " + hp_boss);
                 System.out.println( "Boss Attack " + this.name + " 150 damage " + this.name + " HP : " + this.HP + "\n");
+                
             }
-            hp_boss = hp_boss - (this.ATK+(this.ATK*(attack/100)));
-            this.HP = this.HP - 150;
-
-            if(this.HP <= 0){
-                System.out.println("---------- Game Over ----------");
-                break;
-            }
+            
             if (hp_boss <= 0){
                 System.out.println("---------- You Win ----------");
+                break;
+            }
+            if(this.HP <= 0){
+                System.out.println("---------- Game Over ----------");
                 break;
             }
         }
@@ -517,7 +519,7 @@ class player_attack implements position{
 
     public void Defend(double percent){
         double hp_boss = 1000;
-        double hp = 150 -  (this.DEF + (this.DEF * (percent/100)));
+        double hp = (150 - this.DEF) * (70)/100 ;
         while (hp_boss >= 0 || this.HP > 0){
             System.out.println(this.name + " Attack Boss " + this.ATK + " Damage " + "Boss HP : " + hp_boss);
             System.out.println( "Boss Attack " + this.name +" " +  hp  + " damage " + this.name + " HP : " + this.HP + "\n");
