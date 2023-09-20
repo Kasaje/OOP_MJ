@@ -5,10 +5,10 @@ class MJ_OOP{
         Scanner kbd = new Scanner(System.in);
         System.out.println("------------------------------- Welcome to OOP -------------------------------\n");
         System.out.println("---------- Description ----------\n");
-        System.out.println("ธาตุไฟ + ดาบ  ->   เพิ่มความเสียหาน 20%");
-        System.out.println("ธาตุไฟ + ธนู   ->   เพิ่มความเสียหาน 10% ");
-        System.out.println("ธาตุไฟ + หอก  ->   เพิ่มความเสียหาน 10% ");
-        System.out.println("ธาตุไฟ + โล่   ->   เพิ่มความเสียหาน  5% \n");
+        System.out.println("ธาตุไฟ + ดาบ  ->   เพิ่มความเสียหาย 20%");
+        System.out.println("ธาตุไฟ + ธนู   ->   เพิ่มความเสียหาย 10% ");
+        System.out.println("ธาตุไฟ + หอก  ->   เพิ่มความเสียหาย 10% ");
+        System.out.println("ธาตุไฟ + โล่   ->   เพิ่มความเสียหาย  5% \n");
 
         System.out.println("ธาตุน้ำ + ดาบ  ->   โอกาสดาเมจ *2 20%");
         System.out.println("ธาตุน้ำ + ธนู   ->   โอกาสดาเมจ *2  5% ");
