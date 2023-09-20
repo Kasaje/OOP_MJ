@@ -256,7 +256,7 @@ class Arrow_Fire extends Characters{
     Arrow_Fire(String name){
         super(name);
         this.HP = 850;
-        this.ATK = 220;
+        this.ATK = 210;
         this.DEF = 60;
     }
 
@@ -272,7 +272,7 @@ class Arrow_Water extends Characters{
     Arrow_Water(String name){
         super(name);
         this.HP = 850;
-        this.ATK = 220;
+        this.ATK = 200;
         this.DEF = 60;
     }
 
@@ -288,7 +288,7 @@ class Arrow_Wind extends Characters{
     Arrow_Wind(String name){
         super(name);
         this.HP = 850;
-        this.ATK = 210;
+        this.ATK = 200;
         this.DEF = 60;
     }
 
@@ -304,7 +304,7 @@ class Arrow_Earth extends Characters{
     Arrow_Earth(String name){
         super(name);
         this.HP = 850;
-        this.ATK = 220;
+        this.ATK = 200;
         this.DEF = 60;
     }
 
@@ -493,7 +493,7 @@ class player_attack implements position{
         while (hp_boss >= 0 || this.HP > 0) {
             if(r == 3){
                 System.out.println(this.name + " Attack Boss " + this.ATK*2 + " Damage " + "Boss HP : " + hp_boss);
-                System.out.println( "Boss Attack " + this.name + "150 damage " + this.name + " HP : " + this.HP + "\n");
+                System.out.println( "Boss Attack " + this.name + " 150 damage " + this.name + " HP : " + this.HP + "\n");
                 hp_boss = hp_boss - (this.ATK+(this.ATK*(attack/100)));
             }
             else{
